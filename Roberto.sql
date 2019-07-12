@@ -151,6 +151,6 @@ select tipo_servicio.nombreservicio,count(idservicios) as cantidad
 --• Cree una consulta que devuelva el gasto en servicios realizado por cada reserva.
 SELECT gastos.idreserva, SUM(gastos.Cantidad * gastos.Precio) AS total
 FROM  gastos
-GROUP BI gastos.idreserva
+ GROUP BY  gastos.idreserva
 
 END
