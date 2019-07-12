@@ -116,7 +116,7 @@ CREATE TABLE `socio` (
 -- Estructura de tabla para la tabla `zona`
 -- 
 
-CREATE TABLA `zona` (
+CREATE TABLE `zona` (
   `letra` varchar(3) NOT NULL,
   `tipobarcos` varchar(10) NOT NULL,
   `numerobarcos` int(11) NOT NULL,
@@ -145,7 +145,7 @@ ALTER TABLE `amarre`
 -- Filtros para la tabla `asignaciones`
 -- 
 ALTER TABLE `asignaciones`
-  ADD CONSTRAINT `asignaciones_ibfk_2` FOREIGN KEI (`letrazona`) REFERENCES `zona` (`letra`),
+  ADD CONSTRAINT `asignaciones_ibfk_2` FOREIGN KEY (`letrazona`) REFERENCES `zona` (`letra`),
   ADD CONSTRAINT `asignaciones_ibfk_1` FOREIGN KEY (`codempleado`) REFERENCES `empleados` (`codigo`);
 
 -- 
