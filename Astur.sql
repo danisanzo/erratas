@@ -10,7 +10,7 @@ insert into tipo_servicio (nombreServicio) values ('Ocio')
 select * from tipo_servicio
 --• De de alta una reserva de la habitación 101 para el cliente 12345 para las noches del 2 al 4 de julio de 2009. El código de la reserva es autonumérico.
 
-insert intu reserva_habitac  ([FechaENTRADA]
+insert into reserva_habitac  ([FechaENTRADA]
            ,[FechaSALIDA]
            ,[IVA]
            ,[NumHABITACION]
@@ -99,14 +99,14 @@ reserva_habitac.CLIENTE = clientes.Identificacion
 
 SELECT     precio_habitacion.TIPO_HABITACION, precio_habitacion.Precio,
            temporada.FechaINICIO, temporada.FechaFINAL, temporada.Tipo
-FROM         precio_habitacion INER JOIN
+FROM         precio_habitacion INNER JOIN
              temporada ON precio_habitacion.TEMPORADA = temporada.TEMPORADA
 
 --• Cree una consulta que devuelva todos los clientes, y de aquellos que han realizado
 -- alguna reserva en marzo, indicar el nº de reserva.
 select c.*,r.idreserva 
 from clientes c left join reserva_habitac  r on c.identificacion=r.cliente
-and  fechaentrada betwen '01-03-2009' and '30-03-2009'
+and  fechaentrada between '01-03-2009' and '30-03-2009'
 
 
 --• Crea una vista con los servicios que nunca han sido contratados.
@@ -126,7 +126,8 @@ from clientes c, clientes a
 where c.identificacion<>a.identificacion and c.apellido1=a.apellido1
 
 select * from clientes
-INSERT INTU  clientes  VALUES ('22233', 'ESPAÑA', 'Felipe', 'Iglesias', 'López', 'Avda Los Castros, 44', '942344444', 'Buen cliente');
+INSERT INTO  clientes  VALUES ('22233', 'ESPAÑA', 'Felipe', 'Iglesias', 
+'López', 'Avda Los Castros, 44', '942344444', 'Buen cliente');
 delete from clientes where identificacion='22233'
 
 
