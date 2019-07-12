@@ -9,7 +9,7 @@ insert into tipo_servicio (nombreServicio) values ('Ocio')
 select * from tipo_servicio
 --• De de alta una reserva de la habitación 101 para el cliente 12345 para las noches del 2 al 4 de julio de 2009. El código de la reserva es autonumérico.
 
-insert intu reserva_habitac  ([FechaENTRADA]
+insert into reserva_habitac  ([FechaENTRADA]
            ,[FechaSALIDA]
            ,[IVA]
            ,[NumHABITACION]
@@ -71,7 +71,7 @@ SELECT servicios.NombreSERVICIO, servicios.IVA, servicios.Fecha,
  clientes.Nombre, clientes.Apellido1, gastos.idSERVICIOS AS Expr1
 FROM  servicios INNER JOIN
       gastos ON servicios.idSERVICIOS = gastos.idSERVICIOS INNER JOIN
-      reserva_habitac ON gastos.idRESERVA = reserva_habitac.idRESERVA INER JOIN
+      reserva_habitac ON gastos.idRESERVA = reserva_habitac.idRESERVA INNER JOIN
       clientes ON reserva_habitac.CLIENTE = clientes.Identificacion
 WHERE (servicios.NombreSERVICIO = 'comedor')
 
@@ -98,7 +98,7 @@ reserva_habitac.CLIENTE = clientes.Identificacion
 
 SELECT     precio_habitacion.TIPO_HABITACION, precio_habitacion.Precio,
            temporada.FechaINICIO, temporada.FechaFINAL, temporada.Tipo
-FROM         precio_habitacion INER JOIN
+FROM         precio_habitacion INNER JOIN
              temporada ON precio_habitacion.TEMPORADA = temporada.TEMPORADA
 
 --• Cree una consulta que devuelva todos los clientes, y de aquellos que han realizado
