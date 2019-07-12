@@ -55,12 +55,14 @@ order by apellido1
 
 --• Crea una vista que devuelva los servicios cuyo precio supere los 5 € ordenados por su código de servicio.
 SELECT * FROM DBO.servicios 
-WHERE (precio>5)
+-- Eliminados los parentesis de "WHERE (precio>5)"
+WHERE precio>5
 order by idservicios
 
 -- • Cree una consulta que devuelva las habitaciones reservadas para el día 24 de marzo de 2009.
 select numhabitacion from reserva_habitac
-where '24/03/2009' betwen fechaentrada and fechasalida
+-- Corregido "betwen" por "between"
+where '24/03/2009' between fechaentrada and fechasalida
 
 -- • Cree una consulta que devuelva los clientes procedentes de España y Francia.
 select * from clientes where pais in ('España','Francia')
@@ -153,7 +155,8 @@ select tipo_servicio.nombreservicio,count(idservicios) as cantidad
 --• Cree una consulta que devuelva el gasto en servicios realizado por cada reserva.
 SELECT gastos.idreserva, SUM(gastos.Cantidad * gastos.Precio) AS total
 FROM  gastos
-GROUP BI gastos.idreserva
+  -- Monificado "BI" por "BY"
+GROUP BY gastos.idreserva
 
 
 
