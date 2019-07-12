@@ -1,5 +1,5 @@
 
-use hotel
+use hotel;
 go
 
 --• Inserte el tipo de servicio OCIO.
@@ -53,7 +53,7 @@ order by apellido1
 
 
 --• Crea una vista que devuelva los servicios cuyo precio supere los 5 € ordenados por su código de servicio.
-SELECT * FROM DBO.servicios 
+SELECT * FROM servicios 
 WHERE (precio>5)
 order by idservicios
 
@@ -69,7 +69,7 @@ select * from clientes where pais in ('España','Francia')
 
 SELECT servicios.NombreSERVICIO, servicios.IVA, servicios.Fecha,
  clientes.Nombre, clientes.Apellido1, gastos.idSERVICIOS AS Expr1
-FROM  servicios INER JOIN
+FROM  servicios INNER JOIN -- mal escrito 
       gastos ON servicios.idSERVICIOS = gastos.idSERVICIOS INNER JOIN
       reserva_habitac ON gastos.idRESERVA = reserva_habitac.idRESERVA INNER JOIN
       clientes ON reserva_habitac.CLIENTE = clientes.Identificacion
@@ -105,7 +105,7 @@ FROM         precio_habitacion INNER JOIN
 -- alguna reserva en marzo, indicar el nº de reserva.
 select c.*,r.idreserva 
 from clientes c left join reserva_habitac  r on c.identificacion=r.cliente
-and  fechaentrada between '01-03-2009' and '30-03-2009'
+where fechaentrada between '01-03-2009' and '30-03-2009' -- En vez de AND -  WHERE
 
 
 --• Crea una vista con los servicios que nunca han sido contratados.
@@ -132,7 +132,7 @@ delete from clientes where identificacion='22233'
 --GROUP BY
 --• Crea una vista que devuelva el nº de clientes por nacionalidad.
 select  pais,COUNT( identificacion) AS NUMERO
-FROM CLIENTES GROUP BI pais
+FROM CLIENTES GROUP BY pais  -- mal escrito 
 
 
 --• Crea una vista que devuelva el nº de habitaciones por categoría de habitación.
