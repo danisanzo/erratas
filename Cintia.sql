@@ -152,5 +152,5 @@ ALTER TABLE `asignaciones`
 -- Filtros para la tabla `embarcacion`
 -- 
 ALTER TABLE `embarcacion`
-  ADD CONSTRAIN `embarcacion_ibfk_1` FOREIGN KEY (`propietario`) REFERENCES `socio` (`dni`),
-  ADD CONSTRAIN `embarcacion_ibfk_2` FOREIGN KEY (`numeroamarre`) REFERENCES `amarre` (`numero`);
+  ADD CONSTRAINT `embarcacion_ibfk_1` FOREIGN KEY (`propietario`) REFERENCES `socio` (`dni`),
+  ADD CONSTRAINT `embarcacion_ibfk_2` FOREIGN KEY (`numeroamarre`) REFERENCES `amarre` (`numero`);
