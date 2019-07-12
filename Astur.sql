@@ -10,12 +10,12 @@ insert into tipo_servicio (nombreServicio) values ('Ocio')
 select * from tipo_servicio
 --• De de alta una reserva de la habitación 101 para el cliente 12345 para las noches del 2 al 4 de julio de 2009. El código de la reserva es autonumérico.
 
-insert intu reserva_habitac  ([FechaENTRADA]
+insert into reserva_habitac  ([FechaENTRADA]
            ,[FechaSALIDA]
            ,[IVA]
            ,[NumHABITACION]
            ,[CLIENTE])
-values ('02-07-2009','04-07-2009',0.16,101,'12345')
+values ('02-07-2009','04-07-2009',0.16,101,'123456789')
 
 
 --Actualizaciones
