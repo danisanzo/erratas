@@ -53,7 +53,7 @@ CREATE TABLE `asignaciones` (
 -- Estructura de tabla para la tabla `embarcacion`
 -- 
 
-CREATE TABLA `embarcacion` (
+CREATE TABLE `embarcacion` (
   `matricula` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `tipo` varchar(50) NOT NULL,
