@@ -64,7 +64,7 @@ CREATE TABLE `embarcacion` (
   PRIMARY KEY  (`matricula`),
   KEY `propietario` (`propietario`,`numeroamarre`),
   KEY `numeroamarre` (`numeroamarre`)
-) ENGINE=InnoDB DEFAUL CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 
 -- Volcar la base de datos para la tabla `embarcacion`
@@ -123,7 +123,7 @@ CREATE TABLE `zona` (
   `numerobarcos` int(11) NOT NULL,
   `profundidad` float NOT NULL,
   `ancho` float NOT NULL,
-  PRIMARI KEY  (`letra`)
+  PRIMARY KEY  (`letra`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 
