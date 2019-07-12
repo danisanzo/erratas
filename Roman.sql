@@ -123,7 +123,7 @@ CREATE TABLE `zona` (
   `numerobarcos` int(11) NOT NULL,
   `profundidad` float NOT NULL,
   `ancho` float NOT NULL,
-  PRIMARI KEY  (`letra`)
+  PRIMARY KEY  (`letra`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 
